@@ -10,18 +10,18 @@ from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-      """
-      :params:
-          @page: current page Number
-          @page_size: size or total items in the current page number
-      :ptype:
-          page: int
-          page_size: int
-      :return: starting index/page  and ending index/page
-      rtype: Tuple of int
-      """
-      start_page = (page - 1) * page_size
-      return start_page, start_page + page_size
+    """
+    :params:
+        @page: current page Number
+        @page_size: size or total items in the current page number
+    :ptype:
+        page: int
+        page_size: int
+    :return: starting index/page  and ending index/page
+    rtype: Tuple of int
+    """
+    start_page = (page - 1) * page_size
+    return start_page, start_page + page_size
 
 
 class Server:
@@ -46,14 +46,11 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """return dataset correspond to a given page and page_size
         """
-        assert(type(page) == int and type(page_size) == int)
-        assert(page > 0 and page_size > 0)
+        assert (type(page) is int and type(page_size) is int)
+        assert (page > 0 and page_size > 0)
         try:
             data = index_range(page, page_size)
             return self.__dataset[data[0]:data[1]]
         except IndexError as e:
             return []
         return data
-        
-            
-
