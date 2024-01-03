@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" BaseCaching module
+""" Basic cache module
+    inherited from Basecaching
 """
-
 from basecaching import BaseCaching
 
 
