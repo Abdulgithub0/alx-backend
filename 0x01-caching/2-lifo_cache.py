@@ -3,25 +3,25 @@
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
-    """implement the needed caching methods using FIFO Algorithm
+class LIFOCache(BaseCaching):
+    """implement the needed caching methods using LIFO Algorithm
     """
     def __init__(self):
-        """created a new queue data struct
+        """created a new stack data struct
         """
         super().__init__()
-        self.queue = []
+        self.stack = []
 
     def put(self, key, item):
         """add item to the cache store
         """
         if key and item:
-            if len(self.queue) >= self.MAX_ITEMS:
-                discard = self.queue.pop(0)
+            if len(self.stack) >= self.MAX_ITEMS:
+                discard = self.stack.pop()
                 self.cache_data.pop(discard)
                 print(f'DISCARD: {discard}')
             self.cache_data[key] = item
-            self.queue.append(key)
+            self.stack.append(key)
 
     def get(self, key):
         """retrieve an item based on specify key
