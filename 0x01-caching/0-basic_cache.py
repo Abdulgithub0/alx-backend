@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Basic cache module that inherited from Basecaching"""
-from basecaching import BaseCaching
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
