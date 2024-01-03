@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A Simple queue-based page replacement policies"""
+"""A Simple queue-based page replacement policy"""
 from base_caching import BaseCaching
 
 
@@ -22,7 +22,6 @@ class FIFOCache(BaseCaching):
                 print(f'DISCARD: {discard}')
             self.cache_data[key] = item
             self.stack.append(key)
-                
 
     def get(self, key):
         """retrieve an item based on specify key
