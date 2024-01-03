@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-""" Basic cache module
-    inherited from Basecaching
-"""
+"""Basic cache module that inherited from Basecaching"""
 from basecaching import BaseCaching
 
 
@@ -18,4 +16,4 @@ class BasicCache(BaseCaching):
     def get(self, key):
         """retrieve an item based on specify key
         """
-        return self.cache_data.get(key, None)
+        return self.cache_data.get(key)
