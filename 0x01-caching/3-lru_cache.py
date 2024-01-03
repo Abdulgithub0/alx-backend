@@ -22,8 +22,6 @@ class LRUCache(BaseCaching):
                 self.cache_data.pop(discard)
                 print(f'DISCARD: {discard}')
                 self.ptr = (self.ptr + 1) % self.MAX_ITEMS
-                if self.ptr == 3:
-                    self.ptr = 0
             self.cache_data[key] = item
             self.lru.append(key)
 
