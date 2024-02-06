@@ -11,8 +11,8 @@ function getObjectFromString(strObj) {
 	arr.forEach(kv => {
 		const [key, value] = kv.split('=');
 		obj[key.trim()] = value;
-		});
-	return obj
+	});
+	return obj;
 };
 
 function createHash(KEY, strObj) {
@@ -28,13 +28,12 @@ function displayHash(key) {
 };
 
 
-createHash('HolbertonSchools', `
-Portland=50
-Seattle=80
-New York=20
-Bogota=20
-Cali=40
-Paris=2
-`
-);
+createHash('HolbertonSchools', 
+	       `Portland=50
+		Seattle=80
+		New York=20
+		Bogota=20
+		Cali=40
+		Paris=2`
+		);
 displayHash('HolbertonSchools');
