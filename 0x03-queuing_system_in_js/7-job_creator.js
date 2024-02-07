@@ -52,7 +52,7 @@ const queue = kue.createQueue();
 jobs.forEach(job => {
 	const jobAdded = queue.create('push_notification_code_2', job).save();
 	jobAdded.on('enqueue', () => console.log(`Notification job created: ${jobAdded.id}`))
-	.on('completed', () => console.log(` Notification job ${jobAdded.id} completed`))
+	.on('complete', (result) => console.log(` Notification job ${jobAdded.id} completed`))
 	.on('failed', (error) => console.log(`Notification job ${jobAdded.id} failed: ${error}`))
 	.on('progress', (progress) => console.log(`Notification job ${jobAdded.id} ${progress}% complete`));
 });
